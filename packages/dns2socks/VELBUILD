@@ -45,7 +45,7 @@ postinstall() {
 	systemctl daemon-reload
 	/home/root/.vellum/bin/mount-restore
 
-	systemctl enable dns2socks.service
+	systemctl enable --now dns2socks.service
 }
 
 postupgrade() {
@@ -56,7 +56,7 @@ postupgrade() {
 postosupgrade() {
 	cp /home/root/.vellum/share/dns2socks/systemd/dns2socks.service /etc/systemd/system/dns2socks.service
 	systemctl daemon-reload
-	systemctl enable dns2socks.service
+	systemctl enable --now dns2socks.service
 }
 
 predeinstall() {
