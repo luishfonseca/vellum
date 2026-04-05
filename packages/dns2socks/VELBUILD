@@ -49,7 +49,7 @@ postinstall() {
 }
 
 postupgrade() {
-	.vellum/share/dns2socks/dns2socks.post-install
+	.vellum/hooks/post-install/dns2socks
 	systemctl restart dns2socks.service
 }
 
